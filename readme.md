@@ -2,8 +2,8 @@
 
 ## Requisitos
 
-* Node.JS: v14.20.1 6.14.17
-* Npm: 6.14.17 6.14.17
+* Node.JS: v14.20.1 ou superior
+* Npm: 6.14.17 ou superior
 
 ## Instalar as dependencias
 

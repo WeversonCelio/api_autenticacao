@@ -12,5 +12,24 @@ app.get('/', (req,res)=>{
     res.status(200).json({msg: 'Bem vindo a nossa API'})
 })
 
-//api na porta 3000
+
+// credenciais
+const dBUser = process.env.DB_USER
+const dBPass = process.env.DB_PASS
+const dBAddr = process.env.DB_ADDR
+
+
+
+
+mongoose.connect(`mongodb://${dBUser}:${dBPass}@${dBAddr}`).then(()=>{
 app.listen(3000)
+console.log('conectou ao banco')
+})
+.catch((err) => console.log(err))
+
+
+
+
+
+
+//        `mongodb://${DB_USER}:${DB_PASS}@192.168.3.10:27017`,)
