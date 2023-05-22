@@ -1,4 +1,6 @@
-# API NODE.JS USANDO MONGODB, EXPRESS E JWT
+# API DE AUTENTICAO NO SISTEMA
+
+Neste projeto foi usado Mongodb, express, node.js e jwt.
 
 ## Requisitos
 

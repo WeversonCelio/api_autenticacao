@@ -1,9 +1,12 @@
 // imports
 const router = require('express').Router()
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+
 
 // models
 const User = require('../model/User')
+
 
 
 // register user
@@ -51,6 +54,49 @@ router.post('/register', async(req,res)=>{
      }
 
 
+})
+
+// login user
+router.post('/login', async (req, res)=>{
+    const {email, password} = req.body
+
+      //validation
+     if(!email){
+        return res.status(422).json({msg: ' O email é obrigatorio' })
+     }
+     if(!password){
+        return res.status(422).json({msg: 'a senha é obrigatoria' })
+     }
+
+       //check if user exists
+       const user = await User.findOne({email: email})
+       if(!user){
+          return res.status(404).json({msg: 'Usuario nao encontrado!'})
+       }
+
+       //check if password match
+       const checkPassword = await bcrypt.compare(password, user.password)
+
+       if(!checkPassword){
+        return res.status(422).json({msg: 'senha invalida'})
+       }
+
+       try {
+        const secret = process.env.SECRET
+        
+        const token = jwt.sign(
+            {
+                id: user._id,
+            },
+            secret,
+        )
+
+        res.status(200).json({msg: 'autenticacao realizada com sucesso', token})
+        
+       } catch (error) {
+        console.log(error)
+        res.status(500).json({msg: 'Aconteceu um erro no servidor, tente novamente mais tarde!'})
+     }
 })
 
 

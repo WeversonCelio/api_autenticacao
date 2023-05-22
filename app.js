@@ -3,7 +3,6 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 
-const jwt = require('jsonwebtoken')
 
 const app = express()
 
@@ -22,8 +21,13 @@ app.get('/', (req,res)=>{
 })
 
 // auth router
-const userRoutes = require('./routes/authRoutes')
-app.use('/auth', userRoutes)
+const authRoutes = require('./routes/authRoutes')
+app.use('/auth', authRoutes)
+
+
+// private router
+const userRouter = require('./routes/userRouter')
+app.use('/user', userRouter )
 
 // credenciais
 const dBUser = process.env.DB_USER
