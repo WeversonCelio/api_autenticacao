@@ -1,6 +1,6 @@
-# API DE AUTENTICAO NO SISTEMA
+# API DE AUTENTICAO NO SISTEMA COM CRUD
 
-Neste projeto foi usado Mongodb, express, node.js e jwt.
+Este projeto consiste em uma API crud que permite que apenas usuario autenticados possam permitir a alteração e visualização do banco ddo sistema. Neste projeto foi usado Mongodb, express, node.js e jwt.
 
 ## Requisitos
 
@@ -17,4 +17,5 @@ Neste projeto foi usado Mongodb, express, node.js e jwt.
 
 ## Creditos
 
-Projeto base feito pelo o canal  Matheus Battisti - Hora de Codar: <https://www.youtube.com/watch?v=qEBoZ8lJR3k>
+Projeto base feito pelo o canal  Matheus Battisti - Hora de Codar:
+<https://www.youtube.com/watch?v=qEBoZ8lJR3k> e <https://www.youtube.com/watch?v=K5QaTfE5ylk&t=1596s>
