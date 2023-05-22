@@ -29,6 +29,7 @@ app.use('/auth', authRoutes)
 const userRouter = require('./routes/userRouter')
 app.use('/user', userRouter )
 
+
 // credenciais
 const dBUser = process.env.DB_USER
 const dBPass = process.env.DB_PASS
